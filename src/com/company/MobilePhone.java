@@ -25,6 +25,17 @@ public class MobilePhone {
         return true;
     }
 
+    public boolean updateContact(Contact oldcontact, Contact newContact) {
+        int foundPosition = findContact(oldcontact);
+        if (foundPosition <= 0) {
+            System.out.println(oldcontact.getName() + " , was not found");
+            return false;
+        }
+        this.myContacts.set(foundPosition, newContact);
+        System.out.println(oldcontact.getName() + " was replased " + newContact.getName());
+        return true;
+    }
+
     private int findContact(Contact contact) {
         return this.myContacts.indexOf(contact);
     }
