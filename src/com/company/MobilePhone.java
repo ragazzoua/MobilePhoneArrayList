@@ -27,11 +27,13 @@ public class MobilePhone {
 
     public boolean updateContact(Contact oldcontact, Contact newContact) {
         int foundPosition = findContact(oldcontact);
-        if (foundPosition <= 0) {
+        if (foundPosition < 0) {
             System.out.println(oldcontact.getName() + " , was not found");
             return false;
+        } else if (findContact(newContact.getName()) != -1){
+            System.out.println("Contact name " + newContact.getName() + " already exist. Update not successful ");
         }
-        this.myContacts.set(foundPosition, newContact);
+            this.myContacts.set(foundPosition, newContact);
         System.out.println(oldcontact.getName() + " was replased " + newContact.getName());
         return true;
     }
