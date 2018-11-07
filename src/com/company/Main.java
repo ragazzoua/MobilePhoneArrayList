@@ -51,13 +51,20 @@ public class Main {
 
     }
 
-private static void addNewContact(){
-    System.out.println("Enter new contact name");
-    String name = scanner.nextLine();
-    System.out.println("Enter new contact name");
-    String number = scanner.nextLine();
-    Contact newContact = Contact.createContact(name,number);
-}
+    private static void addNewContact() {
+        System.out.println("Enter new contact name");
+        String name = scanner.nextLine();
+        System.out.println("Enter new contact name");
+        String number = scanner.nextLine();
+        Contact newContact = Contact.createContact(name, number);
+        if (mobilePhone.addNewContact(newContact)) {
+            System.out.println("New contact added " + name + " phone " + number);
+        }
+        else {
+            System.out.println("Cannot add " + name + " alredy on file");
+        }
+
+    }
 
     private static void startPhone() {
         System.out.println("Starting phone");
