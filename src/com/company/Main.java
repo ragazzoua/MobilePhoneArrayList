@@ -23,16 +23,14 @@ public class Main {
                     quit = true;
                     break;
                 case 1:
+                    mobilePhone.printContacts();
+                    break;
 
             }
 
         }
 
     }
-
-    private static void printContacts(){
-        mobilePhone.printContacts();
-            }
 
     private static void startPhone(){
         System.out.println("Starting phone");
